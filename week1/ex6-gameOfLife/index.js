@@ -15,12 +15,12 @@ const NUM_ROWS = 40;
 // life or death
 function createCell(x, y) {
     const alive = Math.random() > 0.5;
-    const lifTime = (alive) ? 1 : 0;
+    const lifeTime = (alive) ? 1 : 0;
     return {
         x,
         y,
         alive,
-        lifTime,
+        lifeTime,
     };
 }
 
@@ -113,11 +113,11 @@ function createGame(context, numRows, numColumns) {
                 // Dead cell becomes living, living cell remains living
                 cell.nextAlive = true;
                 //if cellAlive still alive increment++ if new reset to 1 
-                cell.lifTime = (cell.alive) ? cell.lifeTime++ : 1;
+                cell.lifeTime = (cell.alive) ? cell.lifeTime++ : 1;
             } else {
                 // Living cell dies, dead cell remains dead
                 cell.nextAlive = false;
-                cell.lifTime = 0;
+                cell.lifeTime = 0;
             }
         });
 
